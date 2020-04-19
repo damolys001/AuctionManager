@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Joel Omondiale">
+    <title>@ViewBag.Title - Bid Manager</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>B</b>1.0</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>BidManager </b>1.0</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">ADMINISTRATION</li>
+                    <li class="active"><a href="~/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-crosshairs"></i> <span>Administrators</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Users"><i class="fa fa-users"></i> <span>Users</span></a></li>
+                            <li><a href="~/Roles"><i class="fa fa-eye-slash"></i> <span>Roles</span></a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-gears"></i> <span>Setting</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/BidItems/Index"><i class="fa fa-circle-o"></i>Manage Item</a></li>
+                            @*<li><a href="~/Banks"><i class="fa fa-circle-o"></i>Bank</a></li>
+                            <li><a href="~/Currencies"><i class="fa fa-circle-o"></i>Currency</a></li>
+                            <li><a href="~/PaymentMethods"><i class="fa fa-circle-o"></i>Payment Method</a></li>
+                            <li><a href="~/PremiumCategories"><i class="fa fa-circle-o"></i>Premium Category</a></li>
+                            <li><a href="~/SlackVariables"><i class="fa fa-circle-o"></i>Slack Variables</a></li>*@
+                        </ul>
+                    </li>
+                    
+
+                    <li class="header">BID</li>
+                    
+                    <li><a href="~/Home/Index"><i class="ion ion-link"></i> <span>Bid for Item</span></a></li>
+                    
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                    <small>Control panel</small>
+                </h1>
+                @*<ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>*@
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <!-- Small boxes (Stat box) -->
+                @RenderBody()
+                <!-- /.row -->
+
+
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0.0
+            </div>
+            <strong>Copyright &copy; @DateTime.Now.Year <a href="http://ensure.com.ng" target="_blank">Ensure Insurance</a>.</strong> All rights
+            reserved.
+        </footer>
+
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 2.2.3 -->
+    @*<script src="~/Scripts/jquery-2.2.3.min.js"></script>*@
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+
+
+
+
+    <!-- Bootstrap WYSIHTML5 -->
+    <!-- Slimscroll -->
+    <script src="~/Scripts/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <!-- AdminLTE App -->
+    <script src="~/Scripts/app.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
