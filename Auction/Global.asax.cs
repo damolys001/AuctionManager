@@ -12,7 +12,7 @@ namespace Auction
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        protected void Application_Start() 
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<AuctionModel>());
             AreaRegistration.RegisterAllAreas();
